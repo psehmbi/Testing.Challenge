@@ -9,3 +9,16 @@ Assumptions
 
 * The dummy decision endpoint intentionally has no authentication 
 * Invalid requests should return 400
+** A declined decision is returned
+
+
+Issues:
+
+* On the dynamic controls page, using the Id to find the message element will not work if both controls are being tested together. Either the developer should use a unique id or the test can use Xpath.
+
+
+Todo:
+
+* Replace the obsolete Selenium 'ExpectedConditions'
+* Separate step definitons into their own classes and use context injection
+* Add some logging
