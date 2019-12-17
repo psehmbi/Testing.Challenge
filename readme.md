@@ -7,7 +7,7 @@
 * Build the solution
 * Open the test explorer
 * Click 'Run All Tests'
-  * The browser tests should all pass. They will run in headless mode. If you want to see the browser, comment out [line 18 on DynamicControlsSteps.cs](https://github.com/psehmbi/Testing.Challenge/blob/e7bab547eabb1f719d4dc8f761d8f03f76bab622/StepDefinitons/DynamicControlsSteps.cs#L18) - `chromeOptions.AddArgument("headless");`
+  * The browser tests should all pass. They will run in headless mode. If you want to see the browser, comment out [line 18 on DynamicControlsSteps.cs](https://github.com/psehmbi/Testing.Challenge/blob/3e9d165eb46130df0e03274a739c3658b93bc8d1/StepDefinitons/DynamicControlsSteps.cs#L18) - `chromeOptions.AddArgument("headless");`
   * The API tests give different results each time - it doesn't appear to matter what is posted, even an empty request could return 'Accepted'
 * If debugging tests, in the event of a failure or exception, please do not stop the session. Use 'continue' to make sure that any webdrivers are disposed at the end of the test.
 
