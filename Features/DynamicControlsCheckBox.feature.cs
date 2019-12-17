@@ -155,7 +155,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 16
- testRunner.Given("the checkbox is not visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the checkbox is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 17
  testRunner.When("the Add button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -210,15 +210,15 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Checkbox can be disabled")]
+        [Xunit.SkippableFactAttribute(DisplayName="Checkbox can be added")]
         [Xunit.TraitAttribute("FeatureTitle", "Dynamic Controls Checkbox")]
-        [Xunit.TraitAttribute("Description", "Checkbox can be disabled")]
+        [Xunit.TraitAttribute("Description", "Checkbox can be added")]
         [Xunit.TraitAttribute("Category", "web")]
-        public virtual void CheckboxCanBeDisabled()
+        public virtual void CheckboxCanBeAdded()
         {
             string[] tagsOfScenario = new string[] {
                     "web"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Checkbox can be disabled", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Checkbox can be added", null, new string[] {
                         "web"});
 #line 29
 this.ScenarioInitialize(scenarioInfo);
@@ -241,13 +241,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 30
- testRunner.Given("the checkbox is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the checkbox is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 31
- testRunner.When("the Disable button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the Add button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 32
- testRunner.Then("the checkbox is not visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the checkbox is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -290,7 +290,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("the Enable button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 39
- testRunner.When("the checkbox is Enabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the checkbox is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 40
  testRunner.Then("a message is displayed saying It\'s back!", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -330,13 +330,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 45
- testRunner.Given("the checkbox is enabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the checkbox is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 46
- testRunner.And("the Disable button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the Remove button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 47
- testRunner.When("the checkbox is Disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the checkbox is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 48
  testRunner.Then("a message is displayed saying It\'s gone!", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

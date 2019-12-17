@@ -36,7 +36,7 @@ namespace Testing.Challenge.StepDefinitons
         [When(@"the (.*) button is clicked")]
         public void WhenTheButtonIsClicked(string buttonText)
         {
-            _page.ClickButton(buttonText);
+            _page.ClickButtonWithText(buttonText);
         }
 
         [Then(@"the checkbox button text is (.*)")]
@@ -66,29 +66,48 @@ namespace Testing.Challenge.StepDefinitons
                     Assert.False(_page.TextBoxEnabled(false), "Text box was not disabled");
                     break;
                 default:
-                    throw new Exception("Input should be 'enabled' or 'disabled'");
+                    throw new Exception("Expected step: the textbox is (enabled|disabled)");
             }
         }
 
+
+        [Given(@"the checkbox is displayed")]
+        public void GivenTheCheckboxIsDisplayed()
+        {
+            GivenTheUserIsOnTheDynamicControlsPage();
+            ThenTheCheckboxIsDisplayed();
+        }
+
+
+
+        [Given(@"the checkbox is not displayed")]
+        public void GivenTheCheckboxIsNotVisible()
+        {
+            GivenTheUserIsOnTheDynamicControlsPage();
+            WhenTheButtonIsClicked("Remove");
+            ThenTheCheckboxIsNotDisplayed();
+        }
+
+
         [Then(@"a message is displayed saying (.*)")]
-        public void ThenAMessageIsDisplayedSayingItSEnabled(string expectedText)
+        public void ThenAMessageIsDisplayedSaying(string expectedText)
         {
             Assert.Equal(expectedText, _page.Message.Text);
         }
 
 
-        [Given(@"the checkbox is not visible")]
-        public void GivenTheCheckboxIsNotVisible()
-        {
-            GivenTheUserIsOnTheDynamicControlsPage();
-            WhenTheButtonIsClicked("Remove");
-        }
-
+        [When(@"the checkbox is not displayed")]
         [Then(@"the checkbox is not displayed")]
         public void ThenTheCheckboxIsNotDisplayed()
         {
-            //_page.CheckboxVisible(false);
-            Assert.False(_page.CheckboxVisible(true));
+            Assert.False(_page.CheckboxVisible(false), "Checkbox was displayed");
+        }
+
+        [When(@"the checkbox is displayed")]
+        [Then(@"the checkbox is displayed")]
+        public void ThenTheCheckboxIsDisplayed()
+        {
+            Assert.True(_page.CheckboxVisible(true), "Checkbox was not displayed");
         }
 
 

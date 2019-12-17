@@ -21,14 +21,6 @@ namespace Testing.Challenge.PageObjects
         }
 
 
-        public IWebElement Checkbox
-        {
-            get
-            {
-                return _webDriver.FindElement(By.Id("checkbox"));
-            }
-        }
-
         public IWebElement BtnCheckboxToggle
         {
             get
@@ -67,7 +59,7 @@ namespace Testing.Challenge.PageObjects
         }
 
 
-        public void ClickButton(string buttonText)
+        public void ClickButtonWithText(string buttonText)
         {
             var buttons = _webDriver.FindElements(By.CssSelector($"button[type='button']"));
             var buttonToClick = buttons.First(x => x.Text == buttonText);
@@ -111,15 +103,14 @@ namespace Testing.Challenge.PageObjects
             var i = 0;
             do
             {
-                visible = IsElementPresent(By.Id("checkbox"));
+                visible = IsElementVisible(By.Id("checkbox"));
                 i++;
                 Thread.Sleep(TimeSpan.FromMilliseconds(500));
-                //_wait.Until(ExpectedConditions.ElementExists(By.Id("checkbox")));
             } while (!expected && i < 10);
             return visible;
         }
 
-        private bool IsElementPresent(By by)
+        private bool IsElementVisible(By by)
         {
             try
             {

@@ -13,7 +13,7 @@ Scenario: Checkbox button text changes to 'Add'
 
 @web
 Scenario: Checkbox button text changes to 'Remove'
-	Given the checkbox is not visible
+	Given the checkbox is not displayed
 	When the Add button is clicked
 	Then the checkbox button text is Remove
 
@@ -26,23 +26,23 @@ Scenario: Checkbox button text changes to 'Remove'
 
 
 @web
-Scenario: Checkbox can be disabled
-	Given the checkbox is visible
-	When the Disable button is clicked
-	Then the checkbox is not visible
+Scenario: Checkbox can be added
+	Given the checkbox is not displayed
+	When the Add button is clicked
+	Then the checkbox is displayed
 	
 
 @web
 Scenario: Confirmation message when Checkbox added
 	Given the user is on the dynamic controls page
 	And the Enable button is clicked
-	When the checkbox is Enabled
+	When the checkbox is displayed
 	Then a message is displayed saying It's back!
 
 
 @web
 Scenario: Confirmation message when Checkbox removed
-	Given the checkbox is enabled
-	And the Disable button is clicked
-	When the checkbox is Disabled
+	Given the checkbox is displayed
+	And the Remove button is clicked
+	When the checkbox is not displayed
 	Then a message is displayed saying It's gone!
