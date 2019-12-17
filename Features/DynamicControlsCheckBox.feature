@@ -34,8 +34,8 @@ Scenario: Checkbox can be added
 
 @web
 Scenario: Confirmation message when Checkbox added
-	Given the user is on the dynamic controls page
-	And the Enable button is clicked
+	Given the checkbox is not displayed
+	And the Add button is clicked
 	When the checkbox is displayed
 	Then a message is displayed saying It's back!
 

@@ -284,10 +284,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 37
- testRunner.Given("the user is on the dynamic controls page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the checkbox is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 38
- testRunner.And("the Enable button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the Add button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 39
  testRunner.When("the checkbox is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

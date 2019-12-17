@@ -1,9 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 
 namespace Testing.Challenge.PageObjects
@@ -53,11 +51,11 @@ namespace Testing.Challenge.PageObjects
             }
         }
 
+
         public void Navigate()
         {
             _webDriver.Navigate().GoToUrl("http://the-internet.herokuapp.com/dynamic_controls");
         }
-
 
         public void ClickButtonWithText(string buttonText)
         {
@@ -105,8 +103,8 @@ namespace Testing.Challenge.PageObjects
             {
                 visible = IsElementVisible(By.Id("checkbox"));
                 i++;
-                Thread.Sleep(TimeSpan.FromMilliseconds(500));
-            } while (!expected && i < 10);
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+            } while (!expected && i < 5);
             return visible;
         }
 

@@ -107,7 +107,14 @@ namespace Testing.Challenge.StepDefinitons
         [Then(@"the checkbox is displayed")]
         public void ThenTheCheckboxIsDisplayed()
         {
-            Assert.True(_page.CheckboxVisible(true), "Checkbox was not displayed");
+            bool visible;
+            var i = 0;
+            do
+            {
+                visible = _page.CheckboxVisible(true);
+                i++;
+            } while (!visible && i < 5);
+            Assert.True(visible, "Checkbox was not displayed");
         }
 
 
