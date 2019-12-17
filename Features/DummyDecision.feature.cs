@@ -212,9 +212,9 @@ this.ScenarioInitialize(scenarioInfo);
                             "lastName",
                             "dateOfBirth"});
                 table3.AddRow(new string[] {
-                            "John",
-                            "Smith",
-                            "1970-01-01"});
+                            "Karen",
+                            "Jones",
+                            "1990-12-"});
 #line 30
  testRunner.Given("an applicant with the following data", ((string)(null)), table3, "Given ");
 #line hidden
@@ -222,6 +222,102 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("the appication is submitted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 34
+ testRunner.Then("the decision is Declined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Date of birth must be a valid date")]
+        [Xunit.TraitAttribute("FeatureTitle", "Dummy decisions")]
+        [Xunit.TraitAttribute("Description", "Date of birth must be a valid date")]
+        public virtual void DateOfBirthMustBeAValidDate()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Date of birth must be a valid date", null, ((string[])(null)));
+#line 37
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "firstName",
+                            "lastName",
+                            "dateOfBirth"});
+                table4.AddRow(new string[] {
+                            "John",
+                            "Smith",
+                            "yesterday"});
+#line 38
+ testRunner.Given("an applicant with the following data", ((string)(null)), table4, "Given ");
+#line hidden
+#line 41
+ testRunner.When("the appication is submitted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 42
+ testRunner.Then("the response is BadRequest", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Other date formats are accepted")]
+        [Xunit.TraitAttribute("FeatureTitle", "Dummy decisions")]
+        [Xunit.TraitAttribute("Description", "Other date formats are accepted")]
+        public virtual void OtherDateFormatsAreAccepted()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Other date formats are accepted", null, ((string[])(null)));
+#line 45
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "firstName",
+                            "lastName",
+                            "dateOfBirth"});
+                table5.AddRow(new string[] {
+                            "Karen",
+                            "Jones",
+                            "25-DEC-1990"});
+#line 46
+ testRunner.Given("an applicant with the following data", ((string)(null)), table5, "Given ");
+#line hidden
+#line 49
+ testRunner.When("the appication is submitted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 50
  testRunner.Then("the decision is Declined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

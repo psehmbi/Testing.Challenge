@@ -10,11 +10,13 @@ namespace Testing.Challenge.StepDefinitons
     [Binding]
     public class DynamicControlsSteps
     {
-        private IWebDriver _webDriver;
+        private readonly IWebDriver _webDriver;
         private DynamicControlsPage _page;
         public DynamicControlsSteps()
         {
-            _webDriver = new ChromeDriver();
+            var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArgument("headless");
+            _webDriver = new ChromeDriver(chromeOptions);
         }
 
         [Given(@"the user is on the dynamic controls page")]

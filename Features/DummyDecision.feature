@@ -29,6 +29,22 @@ Scenario: Applicant is accepted
 Scenario: Applicant is declined
 	Given an applicant with the following data
 		| firstName | lastName | dateOfBirth |
-		| John      | Smith    | 1970-01-01  |
+		| Karen     | Jones    | 1990-12-  |
+	When the appication is submitted
+	Then the decision is Declined
+
+	
+Scenario: Date of birth must be a valid date
+	Given an applicant with the following data
+		| firstName | lastName | dateOfBirth |
+		| John      | Smith    | yesterday   |
+	When the appication is submitted
+	Then the response is BadRequest
+
+
+Scenario: Other date formats are accepted
+	Given an applicant with the following data
+		| firstName | lastName | dateOfBirth |
+		| Karen     | Jones    | 25-DEC-1990 |
 	When the appication is submitted
 	Then the decision is Declined
